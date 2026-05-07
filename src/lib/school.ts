@@ -24,6 +24,7 @@ export const NAV = [
   { to: "/foundation", label: "Foundation" },
   { to: "/inspiration", label: "Inspiration" },
   { to: "/facilities", label: "Facilities" },
+  { to: "/tour", label: "360° Tour" },
   { to: "/library", label: "Smart Library" },
   { to: "/transport", label: "Transport" },
   { to: "/admissions", label: "Admissions" },
