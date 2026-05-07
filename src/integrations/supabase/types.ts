@@ -14,7 +14,108 @@ export type Database = {
   }
   public: {
     Tables: {
-      [_ in never]: never
+      admissions: {
+        Row: {
+          address: string | null
+          class_for: string
+          created_at: string
+          dob: string | null
+          email: string
+          id: string
+          message: string | null
+          parent_name: string
+          phone: string
+          status: string
+          student_name: string
+        }
+        Insert: {
+          address?: string | null
+          class_for: string
+          created_at?: string
+          dob?: string | null
+          email: string
+          id?: string
+          message?: string | null
+          parent_name: string
+          phone: string
+          status?: string
+          student_name: string
+        }
+        Update: {
+          address?: string | null
+          class_for?: string
+          created_at?: string
+          dob?: string | null
+          email?: string
+          id?: string
+          message?: string | null
+          parent_name?: string
+          phone?: string
+          status?: string
+          student_name?: string
+        }
+        Relationships: []
+      }
+      contact_messages: {
+        Row: {
+          created_at: string
+          email: string
+          id: string
+          message: string
+          name: string
+          phone: string | null
+          subject: string | null
+        }
+        Insert: {
+          created_at?: string
+          email: string
+          id?: string
+          message: string
+          name: string
+          phone?: string | null
+          subject?: string | null
+        }
+        Update: {
+          created_at?: string
+          email?: string
+          id?: string
+          message?: string
+          name?: string
+          phone?: string | null
+          subject?: string | null
+        }
+        Relationships: []
+      }
+      notices: {
+        Row: {
+          body: string
+          category: string
+          created_at: string
+          id: string
+          pinned: boolean
+          published_at: string
+          title: string
+        }
+        Insert: {
+          body: string
+          category?: string
+          created_at?: string
+          id?: string
+          pinned?: boolean
+          published_at?: string
+          title: string
+        }
+        Update: {
+          body?: string
+          category?: string
+          created_at?: string
+          id?: string
+          pinned?: boolean
+          published_at?: string
+          title?: string
+        }
+        Relationships: []
+      }
     }
     Views: {
       [_ in never]: never
