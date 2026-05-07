@@ -27,6 +27,7 @@ export const NAV = [
   { to: "/library", label: "Smart Library" },
   { to: "/transport", label: "Transport" },
   { to: "/admissions", label: "Admissions" },
+  { to: "/ai", label: "Daffodils AI" },
   { to: "/portal", label: "Portal" },
   { to: "/disclosure", label: "CBSE Disclosure" },
   { to: "/contact", label: "Contact" },
