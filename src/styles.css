@@ -166,6 +166,8 @@
   .gradient-gold { background-image: var(--gradient-gold); }
   .gradient-hero { background-image: var(--gradient-hero); }
   .gradient-leaf { background-image: var(--gradient-leaf); }
+  .gradient-soft { background-image: var(--gradient-soft); }
+  .gradient-mesh { background-image: var(--gradient-mesh); }
   .text-gold { color: var(--gold); }
   .text-gradient-gold {
     background: var(--gradient-gold);
@@ -182,11 +184,27 @@
   .shadow-royal { box-shadow: var(--shadow-royal); }
   .shadow-gold { box-shadow: var(--shadow-gold); }
   .shadow-elegant { box-shadow: var(--shadow-elegant); }
+  .shadow-soft { box-shadow: var(--shadow-soft); }
+  .shadow-float { box-shadow: var(--shadow-float); }
+  .hover-lift { transition: transform 0.4s cubic-bezier(0.2, 0.8, 0.2, 1), box-shadow 0.4s; }
+  .hover-lift:hover { transform: translateY(-6px); box-shadow: var(--shadow-float); }
+  .tilt-3d { transition: transform 0.5s cubic-bezier(0.2, 0.8, 0.2, 1); transform-style: preserve-3d; }
+  .tilt-3d:hover { transform: perspective(1000px) rotateX(4deg) rotateY(-4deg) translateY(-4px); }
+  .glass-soft {
+    background: linear-gradient(135deg, oklch(1 0 0 / 0.85), oklch(1 0 0 / 0.65));
+    backdrop-filter: blur(24px) saturate(160%);
+    -webkit-backdrop-filter: blur(24px) saturate(160%);
+    border: 1px solid oklch(1 0 0 / 0.6);
+  }
 
   @keyframes float-slow { 0%,100%{transform:translateY(0)} 50%{transform:translateY(-12px)} }
+  @keyframes float-petal { 0%{transform:translate(0,0) rotate(0)} 50%{transform:translate(15px,-25px) rotate(180deg)} 100%{transform:translate(0,0) rotate(360deg)} }
+  @keyframes pulse-glow { 0%,100%{box-shadow: 0 0 0 0 oklch(0.72 0.17 142 / 0.4)} 50%{box-shadow: 0 0 0 18px oklch(0.72 0.17 142 / 0)} }
   @keyframes fade-up { from{opacity:0;transform:translateY(20px)} to{opacity:1;transform:translateY(0)} }
   @keyframes shine { 0%{background-position:-200% 0} 100%{background-position:200% 0} }
   .animate-float { animation: float-slow 6s ease-in-out infinite; }
+  .animate-petal { animation: float-petal 14s ease-in-out infinite; }
+  .animate-pulse-glow { animation: pulse-glow 2.4s ease-in-out infinite; }
   .animate-fade-up { animation: fade-up 0.8s ease-out both; }
   .gold-shine {
     background: linear-gradient(90deg, var(--gold-deep), var(--gold), var(--gold-deep));
