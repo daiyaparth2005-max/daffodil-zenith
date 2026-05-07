@@ -99,7 +99,7 @@ function HomePage() {
             <Link to="/admissions" className="group inline-flex items-center gap-2 px-7 py-4 rounded-full gradient-gold text-gold-foreground font-semibold shadow-gold hover:scale-105 transition">
               Begin Your Journey <ArrowRight className="size-4 group-hover:translate-x-1 transition" />
             </Link>
-            <Link to="/facilities" className="inline-flex items-center gap-2 px-7 py-4 rounded-full glass-dark text-primary-foreground font-medium hover:bg-white/15 transition">
+            <Link to="/tour" className="inline-flex items-center gap-2 px-7 py-4 rounded-full glass-dark text-primary-foreground font-medium hover:bg-white/15 transition">
               Virtual Campus Tour
             </Link>
             <Link to="/ai" className="inline-flex items-center gap-2 px-7 py-4 rounded-full gradient-leaf text-primary-foreground font-semibold shadow-elegant hover:scale-105 transition">
