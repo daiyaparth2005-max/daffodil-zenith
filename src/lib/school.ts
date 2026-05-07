@@ -1,0 +1,33 @@
+export const SCHOOL = {
+  name: "Daffodils World School",
+  tagline: "Best CBSE School in Sikar",
+  founded: 2008,
+  affiliation: "1730461",
+  schoolCode: "10807",
+  udise: "08130511616",
+  director: "Mr. Sanjeev Kulhari",
+  principal: "Mrs. Anju (M.A., B.Ed.)",
+  email: "daffodilsworldschool@yahoo.com",
+  phone: "7452874528",
+  address: "Jeevan Nagar, Sanwali Road, Via Gram Sanwali, Sikar – 332021, Rajasthan",
+  campusArea: "8,400 sq m",
+  classrooms: 51,
+  labs: 4,
+  teachers: 108,
+  students: 5001,
+  buses: 71,
+  experience: new Date().getFullYear() - 2008,
+};
+
+export const NAV = [
+  { to: "/", label: "Home" },
+  { to: "/foundation", label: "Foundation" },
+  { to: "/inspiration", label: "Inspiration" },
+  { to: "/facilities", label: "Facilities" },
+  { to: "/library", label: "Smart Library" },
+  { to: "/transport", label: "Transport" },
+  { to: "/admissions", label: "Admissions" },
+  { to: "/portal", label: "Portal" },
+  { to: "/disclosure", label: "CBSE Disclosure" },
+  { to: "/contact", label: "Contact" },
+] as const;
