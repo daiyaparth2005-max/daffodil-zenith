@@ -54,31 +54,31 @@
 }
 
 :root {
-  --radius: 0.75rem;
-  --background: oklch(0.99 0.012 110);
-  --foreground: oklch(0.18 0.04 150);
+  --radius: 1.25rem;
+  --background: oklch(0.995 0.008 110);
+  --foreground: oklch(0.24 0.03 150);
   --card: oklch(1 0 0);
-  --card-foreground: oklch(0.18 0.04 150);
+  --card-foreground: oklch(0.24 0.03 150);
   --popover: oklch(1 0 0);
-  --popover-foreground: oklch(0.18 0.04 150);
-  --primary: oklch(0.46 0.17 145);
-  --primary-foreground: oklch(0.99 0.012 110);
-  --primary-deep: oklch(0.32 0.14 148);
-  --primary-glow: oklch(0.62 0.19 142);
-  --gold: oklch(0.82 0.16 92);
-  --gold-foreground: oklch(0.22 0.06 150);
-  --gold-deep: oklch(0.66 0.15 80);
-  --secondary: oklch(0.96 0.04 120);
-  --secondary-foreground: oklch(0.28 0.12 148);
-  --muted: oklch(0.96 0.025 120);
-  --muted-foreground: oklch(0.45 0.03 150);
-  --accent: oklch(0.94 0.09 95);
-  --accent-foreground: oklch(0.28 0.12 148);
+  --popover-foreground: oklch(0.24 0.03 150);
+  --primary: oklch(0.62 0.17 148);
+  --primary-foreground: oklch(0.99 0.008 110);
+  --primary-deep: oklch(0.42 0.16 148);
+  --primary-glow: oklch(0.78 0.17 140);
+  --gold: oklch(0.85 0.15 92);
+  --gold-foreground: oklch(0.28 0.06 150);
+  --gold-deep: oklch(0.72 0.16 82);
+  --secondary: oklch(0.97 0.03 130);
+  --secondary-foreground: oklch(0.32 0.12 148);
+  --muted: oklch(0.97 0.018 120);
+  --muted-foreground: oklch(0.5 0.025 150);
+  --accent: oklch(0.95 0.08 95);
+  --accent-foreground: oklch(0.32 0.12 148);
   --destructive: oklch(0.577 0.245 27.325);
   --destructive-foreground: oklch(0.99 0.003 248);
-  --border: oklch(0.9 0.03 130);
-  --input: oklch(0.92 0.025 130);
-  --ring: oklch(0.62 0.19 142);
+  --border: oklch(0.93 0.02 130);
+  --input: oklch(0.95 0.018 130);
+  --ring: oklch(0.72 0.17 142);
   --chart-1: oklch(0.646 0.222 41.116);
   --chart-2: oklch(0.6 0.118 184.704);
   --chart-3: oklch(0.398 0.07 227.392);
@@ -94,15 +94,21 @@
   --sidebar-border: oklch(0.4 0.12 148);
   --sidebar-ring: oklch(0.82 0.16 92);
 
-  --gradient-royal: linear-gradient(135deg, oklch(0.32 0.14 148), oklch(0.52 0.19 142));
-  --gradient-gold: linear-gradient(135deg, oklch(0.88 0.16 95), oklch(0.66 0.15 80));
-  --gradient-leaf: linear-gradient(135deg, oklch(0.46 0.17 145) 0%, oklch(0.78 0.18 120) 60%, oklch(0.88 0.16 95) 100%);
-  --gradient-hero: linear-gradient(135deg, oklch(0.18 0.08 148 / 0.88) 0%, oklch(0.34 0.16 145 / 0.72) 50%, oklch(0.18 0.08 148 / 0.92) 100%);
-  --shadow-royal: 0 20px 60px -20px oklch(0.32 0.14 148 / 0.45);
-  --shadow-gold: 0 10px 40px -10px oklch(0.82 0.16 92 / 0.55);
-  --shadow-elegant: 0 30px 80px -30px oklch(0.22 0.06 150 / 0.35);
-  --glass-bg: oklch(1 0 0 / 0.7);
-  --glass-border: oklch(1 0 0 / 0.18);
+  --gradient-royal: linear-gradient(135deg, oklch(0.52 0.16 148), oklch(0.72 0.17 142));
+  --gradient-gold: linear-gradient(135deg, oklch(0.92 0.14 95), oklch(0.74 0.16 82));
+  --gradient-leaf: linear-gradient(135deg, oklch(0.62 0.17 148) 0%, oklch(0.82 0.15 120) 55%, oklch(0.92 0.14 95) 100%);
+  --gradient-hero: linear-gradient(135deg, oklch(0.32 0.12 150 / 0.7) 0%, oklch(0.48 0.16 145 / 0.45) 50%, oklch(0.32 0.12 150 / 0.78) 100%);
+  --gradient-soft: linear-gradient(180deg, oklch(0.99 0.012 110) 0%, oklch(0.96 0.04 130) 100%);
+  --gradient-mesh: radial-gradient(at 20% 10%, oklch(0.92 0.14 95 / 0.35) 0px, transparent 50%),
+                    radial-gradient(at 80% 0%, oklch(0.78 0.17 140 / 0.25) 0px, transparent 50%),
+                    radial-gradient(at 0% 80%, oklch(0.85 0.15 92 / 0.2) 0px, transparent 50%);
+  --shadow-soft: 0 8px 30px -8px oklch(0.42 0.1 148 / 0.18), 0 2px 6px -2px oklch(0.42 0.1 148 / 0.08);
+  --shadow-royal: 0 25px 70px -25px oklch(0.42 0.16 148 / 0.45);
+  --shadow-gold: 0 14px 45px -12px oklch(0.85 0.15 92 / 0.55);
+  --shadow-elegant: 0 40px 90px -30px oklch(0.32 0.06 150 / 0.28);
+  --shadow-float: 0 20px 50px -15px oklch(0.42 0.1 148 / 0.25), 0 4px 12px -4px oklch(0.42 0.1 148 / 0.1);
+  --glass-bg: oklch(1 0 0 / 0.72);
+  --glass-border: oklch(1 0 0 / 0.4);
   --font-display: 'Playfair Display', Georgia, serif;
   --font-sans: 'Inter', system-ui, -apple-system, sans-serif;
 }
