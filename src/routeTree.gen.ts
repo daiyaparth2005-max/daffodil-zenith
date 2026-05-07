@@ -10,15 +10,24 @@
 
 import { Route as rootRouteImport } from './routes/__root'
 import { Route as TransportRouteImport } from './routes/transport'
+import { Route as PortalRouteImport } from './routes/portal'
 import { Route as LibraryRouteImport } from './routes/library'
 import { Route as InspirationRouteImport } from './routes/inspiration'
 import { Route as FoundationRouteImport } from './routes/foundation'
 import { Route as FacilitiesRouteImport } from './routes/facilities'
+import { Route as DisclosureRouteImport } from './routes/disclosure'
+import { Route as ContactRouteImport } from './routes/contact'
+import { Route as AdmissionsRouteImport } from './routes/admissions'
 import { Route as IndexRouteImport } from './routes/index'
 
 const TransportRoute = TransportRouteImport.update({
   id: '/transport',
   path: '/transport',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const PortalRoute = PortalRouteImport.update({
+  id: '/portal',
+  path: '/portal',
   getParentRoute: () => rootRouteImport,
 } as any)
 const LibraryRoute = LibraryRouteImport.update({
@@ -41,6 +50,21 @@ const FacilitiesRoute = FacilitiesRouteImport.update({
   path: '/facilities',
   getParentRoute: () => rootRouteImport,
 } as any)
+const DisclosureRoute = DisclosureRouteImport.update({
+  id: '/disclosure',
+  path: '/disclosure',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const ContactRoute = ContactRouteImport.update({
+  id: '/contact',
+  path: '/contact',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const AdmissionsRoute = AdmissionsRouteImport.update({
+  id: '/admissions',
+  path: '/admissions',
+  getParentRoute: () => rootRouteImport,
+} as any)
 const IndexRoute = IndexRouteImport.update({
   id: '/',
   path: '/',
@@ -49,62 +73,90 @@ const IndexRoute = IndexRouteImport.update({
 
 export interface FileRoutesByFullPath {
   '/': typeof IndexRoute
+  '/admissions': typeof AdmissionsRoute
+  '/contact': typeof ContactRoute
+  '/disclosure': typeof DisclosureRoute
   '/facilities': typeof FacilitiesRoute
   '/foundation': typeof FoundationRoute
   '/inspiration': typeof InspirationRoute
   '/library': typeof LibraryRoute
+  '/portal': typeof PortalRoute
   '/transport': typeof TransportRoute
 }
 export interface FileRoutesByTo {
   '/': typeof IndexRoute
+  '/admissions': typeof AdmissionsRoute
+  '/contact': typeof ContactRoute
+  '/disclosure': typeof DisclosureRoute
   '/facilities': typeof FacilitiesRoute
   '/foundation': typeof FoundationRoute
   '/inspiration': typeof InspirationRoute
   '/library': typeof LibraryRoute
+  '/portal': typeof PortalRoute
   '/transport': typeof TransportRoute
 }
 export interface FileRoutesById {
   __root__: typeof rootRouteImport
   '/': typeof IndexRoute
+  '/admissions': typeof AdmissionsRoute
+  '/contact': typeof ContactRoute
+  '/disclosure': typeof DisclosureRoute
   '/facilities': typeof FacilitiesRoute
   '/foundation': typeof FoundationRoute
   '/inspiration': typeof InspirationRoute
   '/library': typeof LibraryRoute
+  '/portal': typeof PortalRoute
   '/transport': typeof TransportRoute
 }
 export interface FileRouteTypes {
   fileRoutesByFullPath: FileRoutesByFullPath
   fullPaths:
     | '/'
+    | '/admissions'
+    | '/contact'
+    | '/disclosure'
     | '/facilities'
     | '/foundation'
     | '/inspiration'
     | '/library'
+    | '/portal'
     | '/transport'
   fileRoutesByTo: FileRoutesByTo
   to:
     | '/'
+    | '/admissions'
+    | '/contact'
+    | '/disclosure'
     | '/facilities'
     | '/foundation'
     | '/inspiration'
     | '/library'
+    | '/portal'
     | '/transport'
   id:
     | '__root__'
     | '/'
+    | '/admissions'
+    | '/contact'
+    | '/disclosure'
     | '/facilities'
     | '/foundation'
     | '/inspiration'
     | '/library'
+    | '/portal'
     | '/transport'
   fileRoutesById: FileRoutesById
 }
 export interface RootRouteChildren {
   IndexRoute: typeof IndexRoute
+  AdmissionsRoute: typeof AdmissionsRoute
+  ContactRoute: typeof ContactRoute
+  DisclosureRoute: typeof DisclosureRoute
   FacilitiesRoute: typeof FacilitiesRoute
   FoundationRoute: typeof FoundationRoute
   InspirationRoute: typeof InspirationRoute
   LibraryRoute: typeof LibraryRoute
+  PortalRoute: typeof PortalRoute
   TransportRoute: typeof TransportRoute
 }
 
@@ -115,6 +167,13 @@ declare module '@tanstack/react-router' {
       path: '/transport'
       fullPath: '/transport'
       preLoaderRoute: typeof TransportRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/portal': {
+      id: '/portal'
+      path: '/portal'
+      fullPath: '/portal'
+      preLoaderRoute: typeof PortalRouteImport
       parentRoute: typeof rootRouteImport
     }
     '/library': {
@@ -145,6 +204,27 @@ declare module '@tanstack/react-router' {
       preLoaderRoute: typeof FacilitiesRouteImport
       parentRoute: typeof rootRouteImport
     }
+    '/disclosure': {
+      id: '/disclosure'
+      path: '/disclosure'
+      fullPath: '/disclosure'
+      preLoaderRoute: typeof DisclosureRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/contact': {
+      id: '/contact'
+      path: '/contact'
+      fullPath: '/contact'
+      preLoaderRoute: typeof ContactRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/admissions': {
+      id: '/admissions'
+      path: '/admissions'
+      fullPath: '/admissions'
+      preLoaderRoute: typeof AdmissionsRouteImport
+      parentRoute: typeof rootRouteImport
+    }
     '/': {
       id: '/'
       path: '/'
@@ -157,10 +237,14 @@ declare module '@tanstack/react-router' {
 
 const rootRouteChildren: RootRouteChildren = {
   IndexRoute: IndexRoute,
+  AdmissionsRoute: AdmissionsRoute,
+  ContactRoute: ContactRoute,
+  DisclosureRoute: DisclosureRoute,
   FacilitiesRoute: FacilitiesRoute,
   FoundationRoute: FoundationRoute,
   InspirationRoute: InspirationRoute,
   LibraryRoute: LibraryRoute,
+  PortalRoute: PortalRoute,
   TransportRoute: TransportRoute,
 }
 export const routeTree = rootRouteImport
