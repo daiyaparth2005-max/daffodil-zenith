@@ -102,6 +102,9 @@ function HomePage() {
             <Link to="/facilities" className="inline-flex items-center gap-2 px-7 py-4 rounded-full glass-dark text-primary-foreground font-medium hover:bg-white/15 transition">
               Virtual Campus Tour
             </Link>
+            <Link to="/ai" className="inline-flex items-center gap-2 px-7 py-4 rounded-full gradient-leaf text-primary-foreground font-semibold shadow-elegant hover:scale-105 transition">
+              <Sparkles className="size-4 text-gold" /> Talk to Daffodils AI
+            </Link>
           </motion.div>
 
           {/* slide dots */}
