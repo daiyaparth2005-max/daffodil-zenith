@@ -10,6 +10,7 @@
 
 import { Route as rootRouteImport } from './routes/__root'
 import { Route as TransportRouteImport } from './routes/transport'
+import { Route as TourRouteImport } from './routes/tour'
 import { Route as PortalRouteImport } from './routes/portal'
 import { Route as LibraryRouteImport } from './routes/library'
 import { Route as InspirationRouteImport } from './routes/inspiration'
@@ -24,6 +25,11 @@ import { Route as IndexRouteImport } from './routes/index'
 const TransportRoute = TransportRouteImport.update({
   id: '/transport',
   path: '/transport',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const TourRoute = TourRouteImport.update({
+  id: '/tour',
+  path: '/tour',
   getParentRoute: () => rootRouteImport,
 } as any)
 const PortalRoute = PortalRouteImport.update({
@@ -88,6 +94,7 @@ export interface FileRoutesByFullPath {
   '/inspiration': typeof InspirationRoute
   '/library': typeof LibraryRoute
   '/portal': typeof PortalRoute
+  '/tour': typeof TourRoute
   '/transport': typeof TransportRoute
 }
 export interface FileRoutesByTo {
@@ -101,6 +108,7 @@ export interface FileRoutesByTo {
   '/inspiration': typeof InspirationRoute
   '/library': typeof LibraryRoute
   '/portal': typeof PortalRoute
+  '/tour': typeof TourRoute
   '/transport': typeof TransportRoute
 }
 export interface FileRoutesById {
@@ -115,6 +123,7 @@ export interface FileRoutesById {
   '/inspiration': typeof InspirationRoute
   '/library': typeof LibraryRoute
   '/portal': typeof PortalRoute
+  '/tour': typeof TourRoute
   '/transport': typeof TransportRoute
 }
 export interface FileRouteTypes {
@@ -130,6 +139,7 @@ export interface FileRouteTypes {
     | '/inspiration'
     | '/library'
     | '/portal'
+    | '/tour'
     | '/transport'
   fileRoutesByTo: FileRoutesByTo
   to:
@@ -143,6 +153,7 @@ export interface FileRouteTypes {
     | '/inspiration'
     | '/library'
     | '/portal'
+    | '/tour'
     | '/transport'
   id:
     | '__root__'
@@ -156,6 +167,7 @@ export interface FileRouteTypes {
     | '/inspiration'
     | '/library'
     | '/portal'
+    | '/tour'
     | '/transport'
   fileRoutesById: FileRoutesById
 }
@@ -170,6 +182,7 @@ export interface RootRouteChildren {
   InspirationRoute: typeof InspirationRoute
   LibraryRoute: typeof LibraryRoute
   PortalRoute: typeof PortalRoute
+  TourRoute: typeof TourRoute
   TransportRoute: typeof TransportRoute
 }
 
@@ -180,6 +193,13 @@ declare module '@tanstack/react-router' {
       path: '/transport'
       fullPath: '/transport'
       preLoaderRoute: typeof TransportRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/tour': {
+      id: '/tour'
+      path: '/tour'
+      fullPath: '/tour'
+      preLoaderRoute: typeof TourRouteImport
       parentRoute: typeof rootRouteImport
     }
     '/portal': {
@@ -266,8 +286,19 @@ const rootRouteChildren: RootRouteChildren = {
   InspirationRoute: InspirationRoute,
   LibraryRoute: LibraryRoute,
   PortalRoute: PortalRoute,
+  TourRoute: TourRoute,
   TransportRoute: TransportRoute,
 }
 export const routeTree = rootRouteImport
   ._addFileChildren(rootRouteChildren)
   ._addFileTypes<FileRouteTypes>()
+
+import type { getRouter } from './router.tsx'
+import type { startInstance } from './start.ts'
+declare module '@tanstack/react-start' {
+  interface Register {
+    ssr: true
+    router: Awaited<ReturnType<typeof getRouter>>
+    config: Awaited<ReturnType<typeof startInstance.getOptions>>
+  }
+}
