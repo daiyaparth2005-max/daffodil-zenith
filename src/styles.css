@@ -281,4 +281,29 @@
     animation: skeleton-shimmer 1.4s linear infinite;
     border-radius: var(--radius);
   }
+
+  /* ── Global media rounding ──────────────────────────────────────────
+     Every image, banner, thumbnail and gallery item gets a consistent
+     soft radius with proper overflow clipping. Full-bleed/absolute
+     hero images and round avatars are exempted. */
+  :where(main img):not([class*="absolute"]):not([class*="rounded-full"]):not([class*="rounded-none"]):not(.no-round) {
+    border-radius: calc(var(--radius) - 0.25rem);
+    overflow: hidden;
+  }
+  :where(main picture, main video):not([class*="absolute"]):not([class*="rounded-full"]):not(.no-round) {
+    border-radius: calc(var(--radius) - 0.25rem);
+    overflow: hidden;
+  }
+  /* Any aspect-ratio wrapper acts as a media frame → match the same radius */
+  :where(main [class*="aspect-["]):not([class*="rounded-full"]):not(.no-round) {
+    border-radius: calc(var(--radius) - 0.25rem);
+    overflow: hidden;
+  }
+
+  /* Normalize legacy small radii to the soft system scale */
+  .rounded-md   { border-radius: calc(var(--radius) - 0.75rem) !important; }
+  .rounded-lg   { border-radius: calc(var(--radius) - 0.5rem)  !important; }
+  .rounded-xl   { border-radius: calc(var(--radius) - 0.25rem) !important; }
+  .rounded-2xl  { border-radius: var(--radius)                  !important; }
+  .rounded-3xl  { border-radius: calc(var(--radius) + 0.5rem)   !important; }
 }
