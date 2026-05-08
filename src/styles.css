@@ -214,4 +214,42 @@
     background-clip: text;
     color: transparent;
   }
+
+  /* Auto-reveal on scroll (in & out) */
+  .reveal-init {
+    opacity: 0;
+    transform: translateY(28px) scale(0.985);
+    transition:
+      opacity 0.8s cubic-bezier(0.22, 1, 0.36, 1),
+      transform 0.9s cubic-bezier(0.22, 1, 0.36, 1),
+      filter 0.8s ease;
+    filter: blur(6px);
+    will-change: opacity, transform, filter;
+  }
+  .reveal-in {
+    opacity: 1;
+    transform: translateY(0) scale(1);
+    filter: blur(0);
+  }
+  .reveal-out {
+    opacity: 0;
+    transform: translateY(28px) scale(0.985);
+    filter: blur(6px);
+  }
+  @media (prefers-reduced-motion: reduce) {
+    .reveal-init, .reveal-in, .reveal-out {
+      opacity: 1 !important;
+      transform: none !important;
+      filter: none !important;
+      transition: none !important;
+    }
+  }
+
+  /* Subtle press feedback for any clickable */
+  a, button, [role="button"] {
+    transition: transform 0.18s cubic-bezier(0.22, 1, 0.36, 1);
+  }
+  a:active, button:active, [role="button"]:active {
+    transform: scale(0.96);
+  }
 }
