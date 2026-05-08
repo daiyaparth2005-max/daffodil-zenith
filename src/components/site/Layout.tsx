@@ -1,14 +1,23 @@
 import { Header } from "./Header";
 import { Footer } from "./Footer";
 import { FloatingActions } from "./FloatingActions";
+import { RouteLoader } from "./RouteLoader";
+import { PageTransition } from "./PageTransition";
+import { ScrollProgress } from "./ScrollProgress";
+import { AutoReveal } from "./AutoReveal";
 
 export function SiteLayout({ children }: { children: React.ReactNode }) {
   return (
     <div className="min-h-screen flex flex-col">
+      <ScrollProgress />
+      <RouteLoader />
       <Header />
-      <main className="flex-1">{children}</main>
+      <main className="flex-1 touch-tap">
+        <PageTransition>{children}</PageTransition>
+      </main>
       <Footer />
       <FloatingActions />
+      <AutoReveal />
     </div>
   );
 }

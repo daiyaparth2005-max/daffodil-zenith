@@ -252,4 +252,33 @@
   a:active, button:active, [role="button"]:active {
     transform: scale(0.96);
   }
+
+  /* Touch-optimized tap feedback (mobile) */
+  .touch-tap a, .touch-tap button, .touch-tap [role="button"] {
+    -webkit-tap-highlight-color: transparent;
+  }
+  @media (hover: none) and (pointer: coarse) {
+    a:active, button:active, [role="button"]:active {
+      transform: scale(0.94);
+    }
+    .card-tap:active, [data-card]:active {
+      transform: scale(0.985);
+      filter: brightness(0.98);
+    }
+  }
+  .card-tap {
+    transition: transform 0.22s cubic-bezier(0.22, 1, 0.36, 1), box-shadow 0.3s, filter 0.2s;
+  }
+
+  /* Skeleton shimmer */
+  @keyframes skeleton-shimmer {
+    0% { background-position: -400px 0; }
+    100% { background-position: 400px 0; }
+  }
+  .skeleton {
+    background: linear-gradient(90deg, var(--muted) 0%, var(--secondary) 50%, var(--muted) 100%);
+    background-size: 800px 100%;
+    animation: skeleton-shimmer 1.4s linear infinite;
+    border-radius: var(--radius);
+  }
 }
